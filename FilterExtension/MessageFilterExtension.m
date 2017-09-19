@@ -16,10 +16,15 @@
 
 #pragma mark - ILMessageFilterQueryHandling
 
+
+
 - (void)handleQueryRequest:(ILMessageFilterQueryRequest *)queryRequest context:(ILMessageFilterExtensionContext *)context completion:(void (^)(ILMessageFilterQueryResponse *))completion
 {
+    
+    
     // First, check whether to filter using offline data (if possible).
     ILMessageFilterAction offlineAction = [self offlineActionForQueryRequest:queryRequest];
+
     
     switch (offlineAction)
     {
@@ -77,11 +82,18 @@
     NSLog(@"테스트 06 - 01 ->  queryRequest.sender :  %@",queryRequest.sender);
     NSLog(@"테스트 06 - 02 ->  queryRequest.messageBody :  %@",queryRequest.messageBody);
     
+    /// 국내 법안으로 필터링
     if( [self isContainStringWithLongText:queryRequest.messageBody compareWord:@"(광고)"] )
     {
         return ILMessageFilterActionFilter;
     }
     
+    
+    /// 개인적으로 받았던 스팸문자 전화번호를 기준으로 필터링
+    if( [self isContainsSpamContact:queryRequest.sender] )
+    {
+        return ILMessageFilterActionFilter;
+    }
     
     return ILMessageFilterActionNone;
 }
@@ -109,5 +121,42 @@
     return NO;
     
 }
+
+
+-(void)makeSpamContact
+{
+    self.arr01_spamContact = [[NSMutableArray alloc] init];
+    
+    [self.arr01_spamContact addObject:@"1023311442"];
+    [self.arr01_spamContact addObject:@"1022468520"];
+    [self.arr01_spamContact addObject:@"1075589780"];
+    [self.arr01_spamContact addObject:@"1058340313"];
+    [self.arr01_spamContact addObject:@"1073672256"];
+    
+    
+}
+
+-(BOOL)isContainsSpamContact:(NSString*)fromNumber
+{
+    if(!self.arr01_spamContact)
+    {
+        [self makeSpamContact];
+    }
+    
+    for(int i=0; i < [self.arr01_spamContact count]; i++)
+    {
+        NSString *oneSavedNumber = self.arr01_spamContact[i];
+        BOOL isSpam = [self isContainStringWithLongText:fromNumber compareWord:oneSavedNumber];
+        
+        if(isSpam)
+        {
+            return YES;
+        }
+        
+    }
+    
+    return NO;
+}
+
 
 @end

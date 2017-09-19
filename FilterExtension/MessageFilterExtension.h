@@ -9,5 +9,5 @@
 #import <IdentityLookup/IdentityLookup.h>
 
 @interface MessageFilterExtension : ILMessageFilterExtension
-
+@property NSMutableArray *arr01_spamContact;
 @end
