@@ -127,12 +127,14 @@
 {
     self.arr01_spamContact = [[NSMutableArray alloc] init];
     
+    ////  스팸문자가 오는 번호 추가
+    /*
     [self.arr01_spamContact addObject:@"1023311442"];
     [self.arr01_spamContact addObject:@"1022468520"];
     [self.arr01_spamContact addObject:@"1075589780"];
     [self.arr01_spamContact addObject:@"1058340313"];
     [self.arr01_spamContact addObject:@"1073672256"];
-    
+    */
     
 }
 
