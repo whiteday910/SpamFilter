@@ -13,7 +13,33 @@
 		E58D93991F716C700039E518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E58D93981F716C700039E518 /* Assets.xcassets */; };
 		E58D939C1F716C700039E518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58D939A1F716C700039E518 /* LaunchScreen.storyboard */; };
 		E58D939F1F716C700039E518 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E58D939E1F716C700039E518 /* main.m */; };
+		E58D93AD1F716DBC0039E518 /* MessageFilterExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E58D93AC1F716DBC0039E518 /* MessageFilterExtension.m */; };
+		E58D93B11F716DBC0039E518 /* FilterExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E58D93A91F716DBB0039E518 /* FilterExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E58D93AF1F716DBC0039E518 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E58D93841F716C700039E518 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E58D93A81F716DBB0039E518;
+			remoteInfo = FilterExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E58D93B51F716DBC0039E518 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E58D93B11F716DBC0039E518 /* FilterExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E58D938C1F716C700039E518 /* SpamFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpamFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +52,23 @@
 		E58D939B1F716C700039E518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E58D939D1F716C700039E518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E58D939E1F716C700039E518 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E58D93A91F716DBB0039E518 /* FilterExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FilterExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E58D93AB1F716DBC0039E518 /* MessageFilterExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageFilterExtension.h; sourceTree = "<group>"; };
+		E58D93AC1F716DBC0039E518 /* MessageFilterExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageFilterExtension.m; sourceTree = "<group>"; };
+		E58D93AE1F716DBC0039E518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E58D93B61F716E660039E518 /* SpamFilter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpamFilter.entitlements; sourceTree = "<group>"; };
+		E58D93B71F716E7C0039E518 /* FilterExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FilterExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E58D93891F716C700039E518 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E58D93A61F716DBB0039E518 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				E58D938E1F716C700039E518 /* SpamFilter */,
+				E58D93AA1F716DBC0039E518 /* FilterExtension */,
 				E58D938D1F716C700039E518 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				E58D938C1F716C700039E518 /* SpamFilter.app */,
+				E58D93A91F716DBB0039E518 /* FilterExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +99,7 @@
 		E58D938E1F716C700039E518 /* SpamFilter */ = {
 			isa = PBXGroup;
 			children = (
+				E58D93B61F716E660039E518 /* SpamFilter.entitlements */,
 				E58D938F1F716C700039E518 /* AppDelegate.h */,
 				E58D93901F716C700039E518 /* AppDelegate.m */,
 				E58D93921F716C700039E518 /* ViewController.h */,
@@ -71,6 +113,17 @@
 			path = SpamFilter;
 			sourceTree = "<group>";
 		};
+		E58D93AA1F716DBC0039E518 /* FilterExtension */ = {
+			isa = PBXGroup;
+			children = (
+				E58D93B71F716E7C0039E518 /* FilterExtension.entitlements */,
+				E58D93AB1F716DBC0039E518 /* MessageFilterExtension.h */,
+				E58D93AC1F716DBC0039E518 /* MessageFilterExtension.m */,
+				E58D93AE1F716DBC0039E518 /* Info.plist */,
+			);
+			path = FilterExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -81,15 +134,34 @@
 				E58D93881F716C700039E518 /* Sources */,
 				E58D93891F716C700039E518 /* Frameworks */,
 				E58D938A1F716C700039E518 /* Resources */,
+				E58D93B51F716DBC0039E518 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E58D93B01F716DBC0039E518 /* PBXTargetDependency */,
 			);
 			name = SpamFilter;
 			productName = SpamFilter;
 			productReference = E58D938C1F716C700039E518 /* SpamFilter.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E58D93A81F716DBB0039E518 /* FilterExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E58D93B21F716DBC0039E518 /* Build configuration list for PBXNativeTarget "FilterExtension" */;
+			buildPhases = (
+				E58D93A51F716DBB0039E518 /* Sources */,
+				E58D93A61F716DBB0039E518 /* Frameworks */,
+				E58D93A71F716DBB0039E518 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FilterExtension;
+			productName = FilterExtension;
+			productReference = E58D93A91F716DBB0039E518 /* FilterExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -103,6 +175,20 @@
 					E58D938B1F716C700039E518 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
+					};
+					E58D93A81F716DBB0039E518 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -120,6 +206,7 @@
 			projectRoot = "";
 			targets = (
 				E58D938B1F716C700039E518 /* SpamFilter */,
+				E58D93A81F716DBB0039E518 /* FilterExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -132,6 +219,13 @@
 				E58D939C1F716C700039E518 /* LaunchScreen.storyboard in Resources */,
 				E58D93991F716C700039E518 /* Assets.xcassets in Resources */,
 				E58D93971F716C700039E518 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E58D93A71F716DBB0039E518 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +242,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E58D93A51F716DBB0039E518 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E58D93AD1F716DBC0039E518 /* MessageFilterExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E58D93B01F716DBC0039E518 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E58D93A81F716DBB0039E518 /* FilterExtension */;
+			targetProxy = E58D93AF1F716DBC0039E518 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E58D93951F716C700039E518 /* Main.storyboard */ = {
@@ -278,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpamFilter/SpamFilter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6YG5CQ7AQK;
 				INFOPLIST_FILE = SpamFilter/Info.plist;
@@ -292,12 +403,43 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpamFilter/SpamFilter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6YG5CQ7AQK;
 				INFOPLIST_FILE = SpamFilter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.elimsoft.SpamFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E58D93B31F716DBC0039E518 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FilterExtension/FilterExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6YG5CQ7AQK;
+				INFOPLIST_FILE = FilterExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.elimsoft.SpamFilter.FilterExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E58D93B41F716DBC0039E518 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FilterExtension/FilterExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6YG5CQ7AQK;
+				INFOPLIST_FILE = FilterExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.elimsoft.SpamFilter.FilterExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -319,6 +461,15 @@
 			buildConfigurations = (
 				E58D93A31F716C700039E518 /* Debug */,
 				E58D93A41F716C700039E518 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E58D93B21F716DBC0039E518 /* Build configuration list for PBXNativeTarget "FilterExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E58D93B31F716DBC0039E518 /* Debug */,
+				E58D93B41F716DBC0039E518 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
