@@ -11,12 +11,11 @@
 
 @implementation SpamFilterLib
 
-#define APP_GROUP_IDENTIFIER @"group.kr.co.elimsoft.SpamFilter"
-#define APP_DATA_KEY @"AppData"
+
 
 static SpamFilterLib *sharedSpamFilterLibObj;
 static NSUserDefaults *sharedDefaultsObj;
-static NSDictionary *sharedAppData;
+
 
 
 
@@ -44,32 +43,17 @@ static NSDictionary *sharedAppData;
 
 
 
--(NSDictionary*)spamFilterLib01_getAppDataFromFile
+-(NSMutableDictionary*)spamFilterLib01_getAppDataFromFile
 {
     NSString *jsonString = [[[SpamFilterLib sharedSpamFilterLib] userDefaults] objectForKey:APP_DATA_KEY];
     if(jsonString)
     {
-        return [[HWILib sharedObject] hwi_func27_JsonStringTojsonDic:jsonString];
+        return [[[HWILib sharedObject] hwi_func27_JsonStringTojsonDic:jsonString] mutableCopy];
     }
     else
     {
         NSLog(@"예외상황 발생 : spamFilterLib01_getAppDataFromFile ---->  현재 파일에 저장된 앱데이터가 존재하지 않습니다");
-        return [[NSDictionary alloc] init];
-    }
-    
-}
-
--(NSDictionary*)spamFilterLib01_getAppDataFromMemory
-{
-    if(sharedAppData)
-    {
-        return sharedAppData;
-    }
-    else
-    {
-        NSLog(@"예외상황 발생 : spamFilterLib01_getAppDataFromMemory ---->  메모리에 저장된 앱데이터가 존재하지 않습니다");
-        NSLog(@"예외상황 발생 : spamFilterLib01_getAppDataFromMemory ---->  파일에 저장된 값을 리턴합니다.");
-        return [[SpamFilterLib sharedSpamFilterLib] spamFilterLib01_getAppDataFromFile];
+        return [[NSMutableDictionary alloc] init];
     }
     
 }

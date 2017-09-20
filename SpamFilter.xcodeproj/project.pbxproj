@@ -11,9 +11,11 @@
 		E50287B61F72CDBA0007ED8A /* SpamFilterLib.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287B41F72CC980007ED8A /* SpamFilterLib.m */; };
 		E50287B91F72CF260007ED8A /* HWILib.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287B71F72CF260007ED8A /* HWILib.m */; };
 		E50287BA1F72CF260007ED8A /* HWILib.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287B71F72CF260007ED8A /* HWILib.m */; };
-		E50287BE1F72F1AC0007ED8A /* KeywoedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287BD1F72F1AC0007ED8A /* KeywoedVC.m */; };
+		E50287BE1F72F1AC0007ED8A /* KeywordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287BD1F72F1AC0007ED8A /* KeywordVC.m */; };
 		E50287C21F72F3DE0007ED8A /* CustomNaviCont.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287C11F72F3DE0007ED8A /* CustomNaviCont.m */; };
 		E50287C51F72F72C0007ED8A /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287C41F72F72C0007ED8A /* BaseVC.m */; };
+		E5341D211F731BB30028DD7F /* PreventListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D201F731BB30028DD7F /* PreventListVC.m */; };
+		E5341D241F731FDB0028DD7F /* NumberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D231F731FDB0028DD7F /* NumberVC.m */; };
 		E58D93911F716C700039E518 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E58D93901F716C700039E518 /* AppDelegate.m */; };
 		E58D93971F716C700039E518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58D93951F716C700039E518 /* Main.storyboard */; };
 		E58D93991F716C700039E518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E58D93981F716C700039E518 /* Assets.xcassets */; };
@@ -52,12 +54,16 @@
 		E50287B41F72CC980007ED8A /* SpamFilterLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpamFilterLib.m; sourceTree = "<group>"; };
 		E50287B71F72CF260007ED8A /* HWILib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWILib.m; sourceTree = "<group>"; };
 		E50287B81F72CF260007ED8A /* HWILib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWILib.h; sourceTree = "<group>"; };
-		E50287BC1F72F1AC0007ED8A /* KeywoedVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeywoedVC.h; sourceTree = "<group>"; };
-		E50287BD1F72F1AC0007ED8A /* KeywoedVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeywoedVC.m; sourceTree = "<group>"; };
+		E50287BC1F72F1AC0007ED8A /* KeywordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeywordVC.h; sourceTree = "<group>"; };
+		E50287BD1F72F1AC0007ED8A /* KeywordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeywordVC.m; sourceTree = "<group>"; };
 		E50287C01F72F3DE0007ED8A /* CustomNaviCont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNaviCont.h; sourceTree = "<group>"; };
 		E50287C11F72F3DE0007ED8A /* CustomNaviCont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNaviCont.m; sourceTree = "<group>"; };
 		E50287C31F72F72C0007ED8A /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		E50287C41F72F72C0007ED8A /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		E5341D1F1F731BB30028DD7F /* PreventListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreventListVC.h; sourceTree = "<group>"; };
+		E5341D201F731BB30028DD7F /* PreventListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreventListVC.m; sourceTree = "<group>"; };
+		E5341D221F731FDB0028DD7F /* NumberVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberVC.h; sourceTree = "<group>"; };
+		E5341D231F731FDB0028DD7F /* NumberVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberVC.m; sourceTree = "<group>"; };
 		E58D938C1F716C700039E518 /* SpamFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpamFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58D938F1F716C700039E518 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E58D93901F716C700039E518 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -106,8 +112,10 @@
 		E50287BB1F72F1990007ED8A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E50287BC1F72F1AC0007ED8A /* KeywoedVC.h */,
-				E50287BD1F72F1AC0007ED8A /* KeywoedVC.m */,
+				E50287BC1F72F1AC0007ED8A /* KeywordVC.h */,
+				E50287BD1F72F1AC0007ED8A /* KeywordVC.m */,
+				E5341D221F731FDB0028DD7F /* NumberVC.h */,
+				E5341D231F731FDB0028DD7F /* NumberVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -119,6 +127,8 @@
 				E50287C11F72F3DE0007ED8A /* CustomNaviCont.m */,
 				E50287C31F72F72C0007ED8A /* BaseVC.h */,
 				E50287C41F72F72C0007ED8A /* BaseVC.m */,
+				E5341D1F1F731BB30028DD7F /* PreventListVC.h */,
+				E5341D201F731BB30028DD7F /* PreventListVC.m */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -291,9 +301,11 @@
 				E50287C51F72F72C0007ED8A /* BaseVC.m in Sources */,
 				E50287C21F72F3DE0007ED8A /* CustomNaviCont.m in Sources */,
 				E50287B91F72CF260007ED8A /* HWILib.m in Sources */,
+				E5341D241F731FDB0028DD7F /* NumberVC.m in Sources */,
+				E5341D211F731BB30028DD7F /* PreventListVC.m in Sources */,
 				E50287B51F72CC980007ED8A /* SpamFilterLib.m in Sources */,
 				E58D939F1F716C700039E518 /* main.m in Sources */,
-				E50287BE1F72F1AC0007ED8A /* KeywoedVC.m in Sources */,
+				E50287BE1F72F1AC0007ED8A /* KeywordVC.m in Sources */,
 				E58D93911F716C700039E518 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,7 +33,7 @@
 
 -(void)onAddButtonTouchUpInside:(id)sender
 {
-    NSLog(@"추가버튼 터치 확인");
+    NSLog(@"BaseVC - 추가버튼 터치 확인");
     
 }
 

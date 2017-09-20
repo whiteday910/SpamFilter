@@ -24,9 +24,6 @@
     // First, check whether to filter using offline data (if possible).
     ILMessageFilterAction offlineAction = [self offlineActionForQueryRequest:queryRequest];
     
-    NSDictionary *testDic = [[SpamFilterLib sharedSpamFilterLib] spamFilterLib01_getAppDataFromFile];
-    
-    NSLog(@"testDic 확인 --> testDic : %@",testDic);
     
     switch (offlineAction)
     {
@@ -91,11 +88,12 @@
     }
     
     
-    /// 개인적으로 받았던 스팸문자 전화번호를 기준으로 필터링
-    if( [self isContainsSpamContact:queryRequest.sender] )
+    /// 등록한 키워드, 전화번호로 필터링
+    if( [self isContainsSpamSetting:queryRequest] )
     {
         return ILMessageFilterActionFilter;
     }
+    
     
     return ILMessageFilterActionNone;
 }
@@ -117,48 +115,52 @@
         }
         
     }
+    else
+    {
+        NSLog(@"예외상황입니다 디버깅이 필요합니다!! --> longText : %@   ,  compareWord : %@",longText,compareWord );
+    }
     
-    NSLog(@"예외상황입니다 디버깅이 필요합니다!! --> longText : %@   ,  compareWord : %@",longText,compareWord );
     
     return NO;
     
 }
 
 
--(void)makeSpamContact
-{
-    self.arr01_spamContact = [[NSMutableArray alloc] init];
-    
-    ////  스팸문자가 오는 번호 추가
-    /*
-    [self.arr01_spamContact addObject:@"1023311442"];
-    [self.arr01_spamContact addObject:@"1022468520"];
-    [self.arr01_spamContact addObject:@"1075589780"];
-    [self.arr01_spamContact addObject:@"1058340313"];
-    [self.arr01_spamContact addObject:@"1073672256"];
-    */
-    
-}
 
--(BOOL)isContainsSpamContact:(NSString*)fromNumber
+-(BOOL)isContainsSpamSetting:(ILMessageFilterQueryRequest*)messageInfo
 {
-    if(!self.arr01_spamContact)
-    {
-        [self makeSpamContact];
-    }
+    NSMutableDictionary *settingDic = [[SpamFilterLib sharedSpamFilterLib] spamFilterLib01_getAppDataFromFile];
     
-    for(int i=0; i < [self.arr01_spamContact count]; i++)
+    if(settingDic[KEYWORD_KEY])
     {
-        NSString *oneSavedNumber = self.arr01_spamContact[i];
-        BOOL isSpam = [self isContainStringWithLongText:fromNumber compareWord:oneSavedNumber];
+        NSArray *savedKeywords = settingDic[KEYWORD_KEY];
         
-        if(isSpam)
+        for(int i=0; i < [savedKeywords count]; i++)
         {
-            return YES;
+            NSString *savedKeyword = savedKeywords[i];
+            
+            if([[HWILib sharedObject] hwi_func30_isContainsStringWithLongString:messageInfo.messageBody word:savedKeyword])
+            {
+                return YES;
+            }
         }
         
     }
     
+    /*
+     
+     for(int i=0; i < [self.arr01_spamContact count]; i++)
+     {
+     NSString *oneSavedNumber = self.arr01_spamContact[i];
+     BOOL isSpam = [self isContainStringWithLongText:fromNumber compareWord:oneSavedNumber];
+     
+     if(isSpam)
+     {
+     return YES;
+     }
+     
+     }
+     */
     return NO;
 }
 

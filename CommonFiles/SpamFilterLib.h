@@ -8,11 +8,15 @@
 
 #import "HWILib.h"
 
+#define APP_GROUP_IDENTIFIER @"group.kr.co.elimsoft.SpamFilter"
+#define APP_DATA_KEY @"AppData"
+#define KEYWORD_KEY @"keyword"
+#define NUMBER_KEY @"number"
+
 @interface SpamFilterLib : NSObject
 +(SpamFilterLib*)sharedSpamFilterLib;
 
 -(NSUserDefaults*)userDefaults;
--(NSDictionary*)spamFilterLib01_getAppDataFromFile;
--(NSDictionary*)spamFilterLib01_getAppDataFromMemory;
+-(NSMutableDictionary*)spamFilterLib01_getAppDataFromFile;
 -(void)spamFilterLib02_setAppDataToFileWithDic:(NSDictionary*)appDataDic;
 @end
