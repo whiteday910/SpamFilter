@@ -21,10 +21,12 @@
 - (void)handleQueryRequest:(ILMessageFilterQueryRequest *)queryRequest context:(ILMessageFilterExtensionContext *)context completion:(void (^)(ILMessageFilterQueryResponse *))completion
 {
     
-    
     // First, check whether to filter using offline data (if possible).
     ILMessageFilterAction offlineAction = [self offlineActionForQueryRequest:queryRequest];
-
+    
+    NSDictionary *testDic = [[SpamFilterLib sharedSpamFilterLib] spamFilterLib01_getAppDataFromFile];
+    
+    NSLog(@"testDic 확인 --> testDic : %@",testDic);
     
     switch (offlineAction)
     {

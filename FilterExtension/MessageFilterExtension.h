@@ -7,6 +7,7 @@
 //
 
 #import <IdentityLookup/IdentityLookup.h>
+#import "SpamFilterLib.h"
 
 @interface MessageFilterExtension : ILMessageFilterExtension
 @property NSMutableArray *arr01_spamContact;
