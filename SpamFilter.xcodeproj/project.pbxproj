@@ -16,6 +16,10 @@
 		E50287C51F72F72C0007ED8A /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287C41F72F72C0007ED8A /* BaseVC.m */; };
 		E5341D211F731BB30028DD7F /* PreventListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D201F731BB30028DD7F /* PreventListVC.m */; };
 		E5341D241F731FDB0028DD7F /* NumberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D231F731FDB0028DD7F /* NumberVC.m */; };
+		E5341D271F7326990028DD7F /* ETCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D261F7326990028DD7F /* ETCVC.m */; };
+		E5341D2A1F73297B0028DD7F /* RequiredSettingGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D291F73297B0028DD7F /* RequiredSettingGuideVC.m */; };
+		E5341D2E1F732F9C0028DD7F /* RequiredSettingGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D2D1F732F9C0028DD7F /* RequiredSettingGuideCell.m */; };
+		E5341D311F733B260028DD7F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5341D301F733B260028DD7F /* MessageUI.framework */; };
 		E58D93911F716C700039E518 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E58D93901F716C700039E518 /* AppDelegate.m */; };
 		E58D93971F716C700039E518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58D93951F716C700039E518 /* Main.storyboard */; };
 		E58D93991F716C700039E518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E58D93981F716C700039E518 /* Assets.xcassets */; };
@@ -64,6 +68,13 @@
 		E5341D201F731BB30028DD7F /* PreventListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreventListVC.m; sourceTree = "<group>"; };
 		E5341D221F731FDB0028DD7F /* NumberVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberVC.h; sourceTree = "<group>"; };
 		E5341D231F731FDB0028DD7F /* NumberVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NumberVC.m; sourceTree = "<group>"; };
+		E5341D251F7326990028DD7F /* ETCVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETCVC.h; sourceTree = "<group>"; };
+		E5341D261F7326990028DD7F /* ETCVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETCVC.m; sourceTree = "<group>"; };
+		E5341D281F73297B0028DD7F /* RequiredSettingGuideVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequiredSettingGuideVC.h; sourceTree = "<group>"; };
+		E5341D291F73297B0028DD7F /* RequiredSettingGuideVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequiredSettingGuideVC.m; sourceTree = "<group>"; };
+		E5341D2C1F732F9C0028DD7F /* RequiredSettingGuideCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequiredSettingGuideCell.h; sourceTree = "<group>"; };
+		E5341D2D1F732F9C0028DD7F /* RequiredSettingGuideCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequiredSettingGuideCell.m; sourceTree = "<group>"; };
+		E5341D301F733B260028DD7F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E58D938C1F716C700039E518 /* SpamFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpamFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58D938F1F716C700039E518 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E58D93901F716C700039E518 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5341D311F733B260028DD7F /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +128,10 @@
 				E50287BD1F72F1AC0007ED8A /* KeywordVC.m */,
 				E5341D221F731FDB0028DD7F /* NumberVC.h */,
 				E5341D231F731FDB0028DD7F /* NumberVC.m */,
+				E5341D251F7326990028DD7F /* ETCVC.h */,
+				E5341D261F7326990028DD7F /* ETCVC.m */,
+				E5341D281F73297B0028DD7F /* RequiredSettingGuideVC.h */,
+				E5341D291F73297B0028DD7F /* RequiredSettingGuideVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -133,6 +149,23 @@
 			path = Libs;
 			sourceTree = "<group>";
 		};
+		E5341D2B1F732F7B0028DD7F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E5341D2C1F732F9C0028DD7F /* RequiredSettingGuideCell.h */,
+				E5341D2D1F732F9C0028DD7F /* RequiredSettingGuideCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E5341D2F1F733B260028DD7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5341D301F733B260028DD7F /* MessageUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E58D93831F716C700039E518 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +173,7 @@
 				E58D93AA1F716DBC0039E518 /* FilterExtension */,
 				E50287B21F72CC7F0007ED8A /* CommonFiles */,
 				E58D938D1F716C700039E518 /* Products */,
+				E5341D2F1F733B260028DD7F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +189,7 @@
 		E58D938E1F716C700039E518 /* SpamFilter */ = {
 			isa = PBXGroup;
 			children = (
+				E5341D2B1F732F7B0028DD7F /* Cells */,
 				E50287BF1F72F3C90007ED8A /* Libs */,
 				E50287BB1F72F1990007ED8A /* ViewControllers */,
 				E58D93B61F716E660039E518 /* SpamFilter.entitlements */,
@@ -301,10 +336,13 @@
 				E50287C51F72F72C0007ED8A /* BaseVC.m in Sources */,
 				E50287C21F72F3DE0007ED8A /* CustomNaviCont.m in Sources */,
 				E50287B91F72CF260007ED8A /* HWILib.m in Sources */,
+				E5341D2A1F73297B0028DD7F /* RequiredSettingGuideVC.m in Sources */,
 				E5341D241F731FDB0028DD7F /* NumberVC.m in Sources */,
 				E5341D211F731BB30028DD7F /* PreventListVC.m in Sources */,
+				E5341D2E1F732F9C0028DD7F /* RequiredSettingGuideCell.m in Sources */,
 				E50287B51F72CC980007ED8A /* SpamFilterLib.m in Sources */,
 				E58D939F1F716C700039E518 /* main.m in Sources */,
+				E5341D271F7326990028DD7F /* ETCVC.m in Sources */,
 				E50287BE1F72F1AC0007ED8A /* KeywordVC.m in Sources */,
 				E58D93911F716C700039E518 /* AppDelegate.m in Sources */,
 			);

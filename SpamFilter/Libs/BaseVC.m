@@ -13,7 +13,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    // 만약 앱을 처음 실행한 것이면 가이드 열기
+    [[HWILib sharedObject] hwi_func01_delayAndRun:^{
+        NSMutableDictionary *settingDic = [[SpamFilterLib sharedSpamFilterLib] spamFilterLib01_getAppDataFromFile];
+        
+        if(![@"YES" isEqualToString:settingDic[IS_FIRST_RUN_KEY]])
+        {
+            [settingDic setObject:@"YES" forKey:IS_FIRST_RUN_KEY];
+            
+            [[SpamFilterLib sharedSpamFilterLib] spamFilterLib02_setAppDataToFileWithDic:settingDic];
+            
+            UIViewController *targetVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RequiredSettingGuideVC"];
+            
+            [self.navigationController pushViewController:targetVC animated:YES];
+        }
+    } afterDelay:0.5];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
