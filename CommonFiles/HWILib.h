@@ -52,10 +52,10 @@ alpha:(a)]
 +(HWILib*)sharedObject;
 
 /// 특정시간 이후 블럭코드 실행
--(void)hwi_func01_delayAndRun:(void (^)())block afterDelay:(NSTimeInterval)delayInSeconds;
+-(void)hwi_func01_delayAndRun:(void (^)(void))block afterDelay:(NSTimeInterval)delayInSeconds;
 
 /// 메인스레드에서 작업
--(void)hwi_func02_workInMainThread:(void (^)())block;
+-(void)hwi_func02_workInMainThread:(void (^)(void))block;
 
 
 /// 이메일 유효성 체크

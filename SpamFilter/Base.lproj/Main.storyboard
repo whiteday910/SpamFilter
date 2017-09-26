@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iEE-0B-Uun">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OMK-iK-xfF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -259,10 +259,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBe-p8-ZIX">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6ko-w4-c6h">
-                                        <rect key="frame" x="0.0" y="10" width="375" height="498"/>
+                                        <rect key="frame" x="0.0" y="80" width="375" height="448"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="rcV-0s-RHi">
                                             <size key="itemSize" width="375" height="484"/>
@@ -300,18 +300,18 @@
                                         </connections>
                                     </collectionView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="KpM-xY-fsv">
-                                        <rect key="frame" x="0.0" y="508" width="375" height="37"/>
+                                        <rect key="frame" x="0.0" y="528" width="375" height="37"/>
                                         <color key="pageIndicatorTintColor" red="0.34901960784313724" green="0.42352941176470588" blue="0.70196078431372544" alpha="0.19758668664383561" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="currentPageIndicatorTintColor" red="0.34901960784313724" green="0.42352941176470588" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pageControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'메시지' 앱을 설정에서 찾아주세요" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF7-NY-1Rb">
-                                        <rect key="frame" x="101.5" y="545" width="171" height="41"/>
+                                        <rect key="frame" x="101.5" y="565" width="171" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3He-1R-CPn">
-                                        <rect key="frame" x="134.5" y="591" width="105" height="36"/>
+                                        <rect key="frame" x="134.5" y="611" width="105" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="'설정' 앱 열기"/>
                                         <connections>
@@ -331,14 +331,14 @@
                                     <constraint firstAttribute="trailing" secondItem="6ko-w4-c6h" secondAttribute="trailing" id="bvm-zM-rG9"/>
                                     <constraint firstItem="KpM-xY-fsv" firstAttribute="leading" secondItem="LBe-p8-ZIX" secondAttribute="leading" id="j7o-4K-uUx"/>
                                     <constraint firstItem="KpM-xY-fsv" firstAttribute="top" secondItem="6ko-w4-c6h" secondAttribute="bottom" id="orx-0x-X7G"/>
-                                    <constraint firstItem="6ko-w4-c6h" firstAttribute="top" secondItem="LBe-p8-ZIX" secondAttribute="top" constant="10" id="vhR-f8-tMs"/>
+                                    <constraint firstItem="6ko-w4-c6h" firstAttribute="top" secondItem="LBe-p8-ZIX" secondAttribute="top" constant="80" id="vhR-f8-tMs"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="roO-kK-9ed" firstAttribute="bottom" secondItem="LBe-p8-ZIX" secondAttribute="bottom" id="M93-vX-BW7"/>
-                            <constraint firstItem="LBe-p8-ZIX" firstAttribute="top" secondItem="roO-kK-9ed" secondAttribute="top" id="ae6-Gc-DLd"/>
+                            <constraint firstItem="LBe-p8-ZIX" firstAttribute="top" secondItem="Isd-aV-IMM" secondAttribute="top" id="OHc-pi-v7v"/>
                             <constraint firstItem="LBe-p8-ZIX" firstAttribute="leading" secondItem="roO-kK-9ed" secondAttribute="leading" id="cyk-68-zbi"/>
                             <constraint firstItem="roO-kK-9ed" firstAttribute="trailing" secondItem="LBe-p8-ZIX" secondAttribute="trailing" id="uoA-3m-i5j"/>
                         </constraints>
@@ -432,8 +432,58 @@
             </objects>
             <point key="canvasLocation" x="516.79999999999995" y="1487.8560719640182"/>
         </scene>
+        <!--IntroVC-->
+        <scene sceneID="dQx-Fg-ced">
+            <objects>
+                <viewController id="OMK-iK-xfF" customClass="IntroVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZoA-qw-Ras">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="s6s-xp-mT4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mailBox" translatesAutoresizingMaskIntoConstraints="NO" id="Pdc-C0-TLa">
+                                <rect key="frame" x="149.5" y="180" width="76" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="WCS-eI-xNY"/>
+                                    <constraint firstAttribute="height" constant="67" id="zO9-4B-hRC"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spamBlock" translatesAutoresizingMaskIntoConstraints="NO" id="Twf-y5-QIN">
+                                <rect key="frame" x="112" y="262" width="161" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="d3K-51-LNG"/>
+                                    <constraint firstAttribute="height" constant="32" id="emE-Cg-yP5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pdc-C0-TLa" firstAttribute="centerY" secondItem="ZoA-qw-Ras" secondAttribute="centerY" constant="-120" id="2zh-xx-5LZ"/>
+                            <constraint firstItem="Twf-y5-QIN" firstAttribute="top" secondItem="Pdc-C0-TLa" secondAttribute="bottom" constant="15" id="4zf-qE-snJ"/>
+                            <constraint firstItem="Pdc-C0-TLa" firstAttribute="centerX" secondItem="ZoA-qw-Ras" secondAttribute="centerX" id="7Qb-9t-jIC"/>
+                            <constraint firstItem="Twf-y5-QIN" firstAttribute="centerX" secondItem="ZoA-qw-Ras" secondAttribute="centerX" constant="5" id="Ec8-Z0-DM5"/>
+                            <constraint firstItem="s6s-xp-mT4" firstAttribute="leading" secondItem="NLc-mY-hcb" secondAttribute="leading" id="LxT-U8-SsZ"/>
+                            <constraint firstItem="NLc-mY-hcb" firstAttribute="bottom" secondItem="s6s-xp-mT4" secondAttribute="bottom" id="TZ0-bs-fKK"/>
+                            <constraint firstAttribute="trailing" secondItem="s6s-xp-mT4" secondAttribute="trailing" id="X1U-qM-u9q"/>
+                            <constraint firstItem="s6s-xp-mT4" firstAttribute="top" secondItem="ZoA-qw-Ras" secondAttribute="top" id="o3S-sa-bcC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NLc-mY-hcb"/>
+                    </view>
+                    <connections>
+                        <segue destination="iEE-0B-Uun" kind="show" identifier="seg_intro_main" id="rrR-Kh-7kT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5W7-be-rX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1122.4000000000001" y="30.134932533733135"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="bg" width="375" height="667"/>
+        <image name="mailBox" width="76" height="67"/>
+        <image name="spamBlock" width="161" height="32"/>
         <image name="tabbar_keyword" width="25" height="25"/>
         <image name="tabbar_number" width="25" height="25"/>
         <image name="tabbar_other" width="25" height="25"/>

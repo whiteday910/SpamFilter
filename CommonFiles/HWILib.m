@@ -31,7 +31,7 @@ BOOL func12_locationCallbackOnetimeFlag;
     return _sharedObj;
 }
 
-- (void)hwi_func01_delayAndRun:(void (^)())block afterDelay:(NSTimeInterval)delayInSeconds
+-(void)hwi_func01_delayAndRun:(void (^)(void))block afterDelay:(NSTimeInterval)delayInSeconds
 {
     
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t) (delayInSeconds * NSEC_PER_SEC));
@@ -43,7 +43,7 @@ BOOL func12_locationCallbackOnetimeFlag;
 
 }
 
--(void)hwi_func02_workInMainThread:(void (^)())block
+-(void)hwi_func02_workInMainThread:(void (^)(void))block
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         block();

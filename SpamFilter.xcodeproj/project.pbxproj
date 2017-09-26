@@ -14,6 +14,7 @@
 		E50287BE1F72F1AC0007ED8A /* KeywordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287BD1F72F1AC0007ED8A /* KeywordVC.m */; };
 		E50287C21F72F3DE0007ED8A /* CustomNaviCont.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287C11F72F3DE0007ED8A /* CustomNaviCont.m */; };
 		E50287C51F72F72C0007ED8A /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287C41F72F72C0007ED8A /* BaseVC.m */; };
+		E5083EEF1F7AC7E800F8B0B6 /* IntroVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5083EEE1F7AC7E800F8B0B6 /* IntroVC.m */; };
 		E5341D211F731BB30028DD7F /* PreventListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D201F731BB30028DD7F /* PreventListVC.m */; };
 		E5341D241F731FDB0028DD7F /* NumberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D231F731FDB0028DD7F /* NumberVC.m */; };
 		E5341D271F7326990028DD7F /* ETCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D261F7326990028DD7F /* ETCVC.m */; };
@@ -64,6 +65,8 @@
 		E50287C11F72F3DE0007ED8A /* CustomNaviCont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNaviCont.m; sourceTree = "<group>"; };
 		E50287C31F72F72C0007ED8A /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
 		E50287C41F72F72C0007ED8A /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		E5083EED1F7AC7E800F8B0B6 /* IntroVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroVC.h; sourceTree = "<group>"; };
+		E5083EEE1F7AC7E800F8B0B6 /* IntroVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroVC.m; sourceTree = "<group>"; };
 		E5341D1F1F731BB30028DD7F /* PreventListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreventListVC.h; sourceTree = "<group>"; };
 		E5341D201F731BB30028DD7F /* PreventListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreventListVC.m; sourceTree = "<group>"; };
 		E5341D221F731FDB0028DD7F /* NumberVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NumberVC.h; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				E5341D261F7326990028DD7F /* ETCVC.m */,
 				E5341D281F73297B0028DD7F /* RequiredSettingGuideVC.h */,
 				E5341D291F73297B0028DD7F /* RequiredSettingGuideVC.m */,
+				E5083EED1F7AC7E800F8B0B6 /* IntroVC.h */,
+				E5083EEE1F7AC7E800F8B0B6 /* IntroVC.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 			files = (
 				E50287C51F72F72C0007ED8A /* BaseVC.m in Sources */,
 				E50287C21F72F3DE0007ED8A /* CustomNaviCont.m in Sources */,
+				E5083EEF1F7AC7E800F8B0B6 /* IntroVC.m in Sources */,
 				E50287B91F72CF260007ED8A /* HWILib.m in Sources */,
 				E5341D2A1F73297B0028DD7F /* RequiredSettingGuideVC.m in Sources */,
 				E5341D241F731FDB0028DD7F /* NumberVC.m in Sources */,
@@ -503,7 +509,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.elimsoft.SpamFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -518,7 +524,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.elimsoft.SpamFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -533,7 +539,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.elimsoft.SpamFilter.FilterExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -548,7 +554,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.elimsoft.SpamFilter.FilterExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

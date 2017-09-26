@@ -131,6 +131,7 @@
 {
     NSMutableDictionary *settingDic = [[SpamFilterLib sharedSpamFilterLib] spamFilterLib01_getAppDataFromFile];
     
+    /// 키워드 셋팅 확인
     if(settingDic[KEYWORD_KEY])
     {
         NSArray *savedKeywords = settingDic[KEYWORD_KEY];
@@ -147,13 +148,18 @@
         
     }
     
+    /// 전화번호 확인
     if(settingDic[NUMBER_KEY])
     {
         NSArray *savedNumbers = settingDic[NUMBER_KEY];
         for(int i=0; i < [savedNumbers count]; i++)
         {
             NSString *oneSavedNumber = savedNumbers[i];
-            BOOL isSpam =  [messageInfo.sender hasPrefix:oneSavedNumber];
+            
+            NSString *senderNumber = [self removeWhiteSpaceAndSpecialChar:messageInfo.sender];
+            oneSavedNumber = [self removeWhiteSpaceAndSpecialChar:oneSavedNumber];
+            
+            BOOL isSpam =  [senderNumber hasPrefix:oneSavedNumber];
             
             if(isSpam)
             {
@@ -169,6 +175,19 @@
     
     
     return NO;
+}
+
+
+-(NSString*)removeWhiteSpaceAndSpecialChar:(NSString*)input
+{
+    NSString *resultString = input;
+    resultString = [resultString stringByReplacingOccurrencesOfString:@"82 10" withString:@"010"];
+    resultString = [resultString stringByReplacingOccurrencesOfString:@"+" withString:@""];
+    resultString = [resultString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    
+    return resultString;
+    
 }
 
 
