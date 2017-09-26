@@ -183,6 +183,7 @@
     NSString *resultString = input;
     resultString = [resultString stringByReplacingOccurrencesOfString:@"82 10" withString:@"010"];
     resultString = [resultString stringByReplacingOccurrencesOfString:@"+" withString:@""];
+    resultString = [resultString stringByReplacingOccurrencesOfString:@"-" withString:@""];
     resultString = [resultString stringByReplacingOccurrencesOfString:@" " withString:@""];
     
     

@@ -272,7 +272,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RequiredSettingGuideCell" id="aI4-o3-Ri5" customClass="RequiredSettingGuideCell">
-                                                <rect key="frame" x="0.0" y="7" width="375" height="484"/>
+                                                <rect key="frame" x="0.0" y="-18" width="375" height="484"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
@@ -472,7 +472,7 @@
                         <viewLayoutGuide key="safeArea" id="NLc-mY-hcb"/>
                     </view>
                     <connections>
-                        <segue destination="iEE-0B-Uun" kind="show" identifier="seg_intro_main" id="rrR-Kh-7kT"/>
+                        <segue destination="iEE-0B-Uun" kind="presentation" identifier="seg_intro_main" modalTransitionStyle="flipHorizontal" id="rrR-Kh-7kT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5W7-be-rX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
