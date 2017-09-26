@@ -147,20 +147,27 @@
         
     }
     
-    /*
+    if(settingDic[NUMBER_KEY])
+    {
+        NSArray *savedNumbers = settingDic[NUMBER_KEY];
+        for(int i=0; i < [savedNumbers count]; i++)
+        {
+            NSString *oneSavedNumber = savedNumbers[i];
+            BOOL isSpam =  [messageInfo.sender hasPrefix:oneSavedNumber];
+            
+            if(isSpam)
+            {
+                return YES;
+            }
+            
+        }
+        
+    }
+    
+    
      
-     for(int i=0; i < [self.arr01_spamContact count]; i++)
-     {
-     NSString *oneSavedNumber = self.arr01_spamContact[i];
-     BOOL isSpam = [self isContainStringWithLongText:fromNumber compareWord:oneSavedNumber];
-     
-     if(isSpam)
-     {
-     return YES;
-     }
-     
-     }
-     */
+    
+    
     return NO;
 }
 
