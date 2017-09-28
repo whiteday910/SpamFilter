@@ -283,7 +283,7 @@
 #pragma mark - Google Admob Delegate
 - (void)nativeExpressAdViewDidReceiveAd:(GADNativeExpressAdView *)nativeExpressAdView
 {
-    NSLog(@"애드몹 테스트 01 : nativeExpressAdViewDidReceiveAd");
+    NSLog(@"PreventListVC 애드몹 테스트 01 : nativeExpressAdViewDidReceiveAd");
     
 }
 
@@ -292,7 +292,7 @@
 didFailToReceiveAdWithError:(GADRequestError *)error
 {
     
-    NSLog(@"애드몹 테스트 02 : didFailToReceiveAdWithError --> error : %@",[error localizedDescription]);
+    NSLog(@"PreventListVC 애드몹 테스트 02 : didFailToReceiveAdWithError --> error : %@",[error localizedDescription]);
     
 }
 @end

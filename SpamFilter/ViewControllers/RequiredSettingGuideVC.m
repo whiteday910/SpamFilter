@@ -15,6 +15,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    if(self.navigationController)
+    {
+        [self.navigationItem setTitle:@"SPAM BLOCK 설정가이드"];
+    }
+    
     self.arr01_guide = [[NSMutableArray alloc] init];
     
     NSMutableDictionary *oneGuideContent;

@@ -16,13 +16,32 @@
     [super viewDidLoad];
     
     self.arr01_menu = [[NSMutableArray alloc] init];
-    [self.arr01_menu addObject:@"앱 필수 설정 가이드"];
+    
+    
+    [self.arr01_menu addObject:@"SPAM BLOCK 설정가이드"];
     [self.arr01_menu addObject:@"기능개선 요청"];
+    
+    
+    
     
     [self.tableview01_content reloadData];
     [[HWILib sharedObject] hwi_func01_delayAndRun:^{
         [self.const01_tableviewHeight setConstant:self.tableview01_content.contentSize.height];
     } afterDelay:0.05];
+    
+    
+    
+    
+    /// 광고화면 로드
+    GADNativeExpressAdView *adview = [[GADNativeExpressAdView alloc] initWithAdSize:GADAdSizeFromCGSize(CGSizeMake([[UIScreen mainScreen] bounds].size.width, 80))];
+    
+    [adview setAdUnitID:@"ca-app-pub-8810698137233879/3046742776"];
+    [adview setRootViewController:self];
+    [adview setDelegate:self];
+    GADRequest *request = [GADRequest request];
+    [adview loadRequest:request];
+    
+    [self.view01_ad addSubview:adview];
     
 }
 
@@ -62,7 +81,7 @@
     
     NSString *selectedTitle = self.arr01_menu[indexPath.row];
     
-    if([@"앱 필수 설정 가이드" isEqualToString:selectedTitle])
+    if([@"SPAM BLOCK 설정가이드" isEqualToString:selectedTitle])
     {
         UIViewController *targetVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RequiredSettingGuideVC"];
         
@@ -127,6 +146,23 @@
         [[HWILib sharedObject] hwi_func04_showSimpleAlert:title message:desc btnTitle:@"확인" btnHandler:nil vc:self];
     } afterDelay:1];
     
+    
+}
+
+
+#pragma mark - AdMob 광고뷰 델리깃
+- (void)nativeExpressAdViewDidReceiveAd:(GADNativeExpressAdView *)nativeExpressAdView
+{
+    NSLog(@"ETCVC 애드몹 테스트 01 : nativeExpressAdViewDidReceiveAd");
+    
+}
+
+
+- (void)nativeExpressAdView:(GADNativeExpressAdView *)nativeExpressAdView
+didFailToReceiveAdWithError:(GADRequestError *)error
+{
+    
+    NSLog(@"ETCVC 애드몹 테스트 02 : didFailToReceiveAdWithError --> error : %@",[error localizedDescription]);
     
 }
 
