@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82A0DB68B8BE60F6929CF13E /* libPods-FilterExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C33DC09388194C3D95FA4DB /* libPods-FilterExtension.a */; };
+		D5E4F5B26FD7CAAD068CAA37 /* libPods-SpamFilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DADE9E87D9B4378F31F6042 /* libPods-SpamFilter.a */; };
 		E50287B51F72CC980007ED8A /* SpamFilterLib.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287B41F72CC980007ED8A /* SpamFilterLib.m */; };
 		E50287B61F72CDBA0007ED8A /* SpamFilterLib.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287B41F72CC980007ED8A /* SpamFilterLib.m */; };
 		E50287B91F72CF260007ED8A /* HWILib.m in Sources */ = {isa = PBXBuildFile; fileRef = E50287B71F72CF260007ED8A /* HWILib.m */; };
@@ -55,6 +57,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3C33DC09388194C3D95FA4DB /* libPods-FilterExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FilterExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64BF72C54AB40D685F9E4841 /* Pods-FilterExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilterExtension/Pods-FilterExtension.release.xcconfig"; sourceTree = "<group>"; };
+		7B4308F086EFD2BCBD6A5282 /* Pods-SpamFilter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpamFilter.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpamFilter/Pods-SpamFilter.release.xcconfig"; sourceTree = "<group>"; };
+		7DADE9E87D9B4378F31F6042 /* libPods-SpamFilter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpamFilter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC3F141809E9C44BFC2ED3EE /* Pods-SpamFilter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpamFilter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpamFilter/Pods-SpamFilter.debug.xcconfig"; sourceTree = "<group>"; };
+		B37F8B7C6D49407CDF49FF12 /* Pods-FilterExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilterExtension/Pods-FilterExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		E50287B31F72CC980007ED8A /* SpamFilterLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpamFilterLib.h; sourceTree = "<group>"; };
 		E50287B41F72CC980007ED8A /* SpamFilterLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpamFilterLib.m; sourceTree = "<group>"; };
 		E50287B71F72CF260007ED8A /* HWILib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWILib.m; sourceTree = "<group>"; };
@@ -100,6 +108,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5341D311F733B260028DD7F /* MessageUI.framework in Frameworks */,
+				D5E4F5B26FD7CAAD068CAA37 /* libPods-SpamFilter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,12 +116,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A0DB68B8BE60F6929CF13E /* libPods-FilterExtension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7009C26E32C3EA98AD25A204 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B37F8B7C6D49407CDF49FF12 /* Pods-FilterExtension.debug.xcconfig */,
+				64BF72C54AB40D685F9E4841 /* Pods-FilterExtension.release.xcconfig */,
+				AC3F141809E9C44BFC2ED3EE /* Pods-SpamFilter.debug.xcconfig */,
+				7B4308F086EFD2BCBD6A5282 /* Pods-SpamFilter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E50287B21F72CC7F0007ED8A /* CommonFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				E5341D301F733B260028DD7F /* MessageUI.framework */,
+				3C33DC09388194C3D95FA4DB /* libPods-FilterExtension.a */,
+				7DADE9E87D9B4378F31F6042 /* libPods-SpamFilter.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,6 +202,7 @@
 				E50287B21F72CC7F0007ED8A /* CommonFiles */,
 				E58D938D1F716C700039E518 /* Products */,
 				E5341D2F1F733B260028DD7F /* Frameworks */,
+				7009C26E32C3EA98AD25A204 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,10 +251,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E58D93A21F716C700039E518 /* Build configuration list for PBXNativeTarget "SpamFilter" */;
 			buildPhases = (
+				6918D053F5A32B34460E5B56 /* [CP] Check Pods Manifest.lock */,
 				E58D93881F716C700039E518 /* Sources */,
 				E58D93891F716C700039E518 /* Frameworks */,
 				E58D938A1F716C700039E518 /* Resources */,
 				E58D93B51F716DBC0039E518 /* Embed App Extensions */,
+				379116AD86B1171FD848E7F1 /* [CP] Embed Pods Frameworks */,
+				A1B6234442887726037CD431 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,9 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E58D93B21F716DBC0039E518 /* Build configuration list for PBXNativeTarget "FilterExtension" */;
 			buildPhases = (
+				8BB7423431FBD229769F1EB1 /* [CP] Check Pods Manifest.lock */,
 				E58D93A51F716DBB0039E518 /* Sources */,
 				E58D93A61F716DBB0039E518 /* Frameworks */,
 				E58D93A71F716DBB0039E518 /* Resources */,
+				3655557CC15858ED752F9984 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,6 +361,90 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3655557CC15858ED752F9984 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FilterExtension/Pods-FilterExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		379116AD86B1171FD848E7F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpamFilter/Pods-SpamFilter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6918D053F5A32B34460E5B56 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpamFilter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BB7423431FBD229769F1EB1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FilterExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1B6234442887726037CD431 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpamFilter/Pods-SpamFilter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E58D93881F716C700039E518 /* Sources */ = {
@@ -500,6 +613,7 @@
 		};
 		E58D93A31F716C700039E518 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC3F141809E9C44BFC2ED3EE /* Pods-SpamFilter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SpamFilter/SpamFilter.entitlements;
@@ -515,6 +629,7 @@
 		};
 		E58D93A41F716C700039E518 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B4308F086EFD2BCBD6A5282 /* Pods-SpamFilter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SpamFilter/SpamFilter.entitlements;
@@ -530,6 +645,7 @@
 		};
 		E58D93B31F716DBC0039E518 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B37F8B7C6D49407CDF49FF12 /* Pods-FilterExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FilterExtension/FilterExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +661,7 @@
 		};
 		E58D93B41F716DBC0039E518 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64BF72C54AB40D685F9E4841 /* Pods-FilterExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FilterExtension/FilterExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;

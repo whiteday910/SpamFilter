@@ -197,6 +197,34 @@
 
 
 #pragma mark - 테이블뷰 델리깃
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    /*
+    UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 44)];
+    [testView setBackgroundColor:getColorWithHex(0xff00ff)];
+    return testView;
+    */
+    
+    GADNativeExpressAdView *adview = [[GADNativeExpressAdView alloc] initWithAdSize:GADAdSizeFromCGSize(CGSizeMake([[UIScreen mainScreen] bounds].size.width, 44))];
+    
+    [adview setAdUnitID:@"ca-app-pub-8810698137233879/3046742776"];
+    [adview setRootViewController:self];
+    [adview setDelegate:self];
+    GADRequest *request = [GADRequest request];
+    [adview loadRequest:request];
+    
+    
+    return adview;
+    
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44.0;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(self.arr01_list)
@@ -252,4 +280,19 @@
     }
 }
 
+#pragma mark - Google Admob Delegate
+- (void)nativeExpressAdViewDidReceiveAd:(GADNativeExpressAdView *)nativeExpressAdView
+{
+    NSLog(@"애드몹 테스트 01 : nativeExpressAdViewDidReceiveAd");
+    
+}
+
+
+- (void)nativeExpressAdView:(GADNativeExpressAdView *)nativeExpressAdView
+didFailToReceiveAdWithError:(GADRequestError *)error
+{
+    
+    NSLog(@"애드몹 테스트 02 : didFailToReceiveAdWithError --> error : %@",[error localizedDescription]);
+    
+}
 @end

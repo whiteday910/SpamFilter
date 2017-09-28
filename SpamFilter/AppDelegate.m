@@ -12,10 +12,14 @@
 
 @end
 
+@import GoogleMobileAds;
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [GADMobileAds configureWithApplicationID:@"ca-app-pub-8810698137233879~9877898522"];
+    
     // Override point for customization after application launch.
     return YES;
 }

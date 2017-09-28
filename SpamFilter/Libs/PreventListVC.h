@@ -8,7 +8,7 @@
 
 #import "BaseVC.h"
 
-@interface PreventListVC : BaseVC< UITableViewDataSource, UITableViewDelegate >
+@interface PreventListVC : BaseVC< UITableViewDataSource, UITableViewDelegate, GADNativeExpressAdViewDelegate>
 
 typedef NS_ENUM(NSInteger, VCMode) {
     VCModeKeyword,
