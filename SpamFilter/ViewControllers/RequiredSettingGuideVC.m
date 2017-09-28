@@ -100,6 +100,8 @@
 
 - (IBAction)onOpenSettingBtnTouchUpInside:(id)sender
 {
+    NSLog(@"테스트 : %@",UIApplicationOpenSettingsURLString);
+    
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
 }
 
