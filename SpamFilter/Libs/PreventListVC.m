@@ -206,7 +206,7 @@
     return testView;
     */
     
-    GADNativeExpressAdView *adview = [[GADNativeExpressAdView alloc] initWithAdSize:GADAdSizeFromCGSize(CGSizeMake([[UIScreen mainScreen] bounds].size.width, 44))];
+    GADNativeExpressAdView *adview = [[GADNativeExpressAdView alloc] initWithAdSize:GADAdSizeFromCGSize(CGSizeMake([[UIScreen mainScreen] bounds].size.width, 80))];
     
     [adview setAdUnitID:@"ca-app-pub-8810698137233879/3046742776"];
     [adview setRootViewController:self];
@@ -222,7 +222,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 44.0;
+    return 80.0 ;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
