@@ -18,11 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Em9-Qk-idd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="OS9-L6-SR3"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPe-Ca-mUG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="474"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 키워드가 존재하지 않습니다.  키워드를 등록하시면 해당 키워드가 포함된 문자메시지는 알림표시 및 진동, 벨소리가 울리지 않으며 'SMS 정크'로 분류됩니다.  '(광고)' 가 포함된 키워드는 자동으로 분류됩니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAu-4f-rlW">
-                                        <rect key="frame" x="20.5" y="160.5" width="334.5" height="134"/>
+                                        <rect key="frame" x="20.5" y="120.5" width="334.5" height="134"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -37,10 +44,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vB-dz-NZC">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="474"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jzn-GU-PAs">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
@@ -80,19 +87,23 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0vB-dz-NZC" secondAttribute="trailing" id="2uF-JI-0Mr"/>
-                            <constraint firstItem="0vB-dz-NZC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4Yz-HT-1lm"/>
+                            <constraint firstItem="0vB-dz-NZC" firstAttribute="top" secondItem="Em9-Qk-idd" secondAttribute="bottom" id="4Hb-zU-shh"/>
+                            <constraint firstItem="Em9-Qk-idd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CgJ-EY-VNu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SPe-Ca-mUG" secondAttribute="bottom" id="DaJ-JW-xe1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0vB-dz-NZC" secondAttribute="bottom" id="VRZ-Vz-oHA"/>
                             <constraint firstItem="0vB-dz-NZC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wj7-DW-LF8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SPe-Ca-mUG" secondAttribute="trailing" id="YVX-6q-BoQ"/>
-                            <constraint firstItem="SPe-Ca-mUG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="agv-mU-Mnu"/>
+                            <constraint firstItem="Em9-Qk-idd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="amP-lY-NcH"/>
+                            <constraint firstItem="SPe-Ca-mUG" firstAttribute="top" secondItem="Em9-Qk-idd" secondAttribute="bottom" id="hAY-Sj-cKI"/>
                             <constraint firstItem="SPe-Ca-mUG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hS0-ax-cTm"/>
+                            <constraint firstAttribute="trailing" secondItem="Em9-Qk-idd" secondAttribute="trailing" id="tCb-dM-cn5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="키워드 필터링" id="srr-94-ohd"/>
                     <connections>
                         <outlet property="tableview01_content" destination="jzn-GU-PAs" id="UUP-t7-5Mf"/>
+                        <outlet property="view00_admob" destination="Em9-Qk-idd" id="kg2-f6-xBx"/>
                         <outlet property="view01_01_empty" destination="SPe-Ca-mUG" id="HPu-ZN-lzV"/>
                         <outlet property="view01_02_list" destination="0vB-dz-NZC" id="08S-zz-foi"/>
                     </connections>
@@ -109,11 +120,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvY-jQ-ZtZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="hEa-Q4-JqI"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYU-s5-rzz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="474"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 전화번호가 존재하지 않습니다.  전화번호를 등록하시면 해당 전화번호로 시작되는 번호로 문자의 알림표시 및 진동, 벨소리가 울리지 않으며 'SMS 정크'로 분류됩니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTp-bN-PNB">
-                                        <rect key="frame" x="25" y="179.5" width="325.5" height="95.5"/>
+                                        <rect key="frame" x="25" y="139.5" width="325.5" height="95.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -128,10 +146,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptZ-iM-fDH">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="474"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1XE-N9-far">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
@@ -171,19 +189,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZUI-3S-x7n" firstAttribute="trailing" secondItem="yYU-s5-rzz" secondAttribute="trailing" id="4yx-lt-ROO"/>
+                            <constraint firstItem="yYU-s5-rzz" firstAttribute="top" secondItem="OvY-jQ-ZtZ" secondAttribute="bottom" id="FcT-Xk-pzK"/>
                             <constraint firstItem="yYU-s5-rzz" firstAttribute="leading" secondItem="ZUI-3S-x7n" secondAttribute="leading" id="GEo-Tm-sNk"/>
-                            <constraint firstItem="ptZ-iM-fDH" firstAttribute="top" secondItem="ZUI-3S-x7n" secondAttribute="top" id="Kjc-DK-2f8"/>
+                            <constraint firstItem="OvY-jQ-ZtZ" firstAttribute="top" secondItem="ZUI-3S-x7n" secondAttribute="top" id="K4u-vw-bU3"/>
                             <constraint firstItem="ZUI-3S-x7n" firstAttribute="trailing" secondItem="ptZ-iM-fDH" secondAttribute="trailing" id="PNc-yt-M8C"/>
-                            <constraint firstItem="yYU-s5-rzz" firstAttribute="top" secondItem="ZUI-3S-x7n" secondAttribute="top" id="cOo-jJ-zew"/>
+                            <constraint firstItem="ptZ-iM-fDH" firstAttribute="top" secondItem="OvY-jQ-ZtZ" secondAttribute="bottom" id="Xeu-Xv-G1Q"/>
                             <constraint firstItem="ZUI-3S-x7n" firstAttribute="bottom" secondItem="ptZ-iM-fDH" secondAttribute="bottom" id="eEC-qe-LSo"/>
+                            <constraint firstItem="OvY-jQ-ZtZ" firstAttribute="leading" secondItem="LR6-JU-RpR" secondAttribute="leading" id="fov-0A-wTR"/>
                             <constraint firstItem="ptZ-iM-fDH" firstAttribute="leading" secondItem="ZUI-3S-x7n" secondAttribute="leading" id="osb-ZB-FQx"/>
                             <constraint firstItem="ZUI-3S-x7n" firstAttribute="bottom" secondItem="yYU-s5-rzz" secondAttribute="bottom" id="rFw-mb-Fzt"/>
+                            <constraint firstAttribute="trailing" secondItem="OvY-jQ-ZtZ" secondAttribute="trailing" id="uVP-eJ-o1f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZUI-3S-x7n"/>
                     </view>
                     <navigationItem key="navigationItem" title="전화번호 필터링" id="f00-rB-xqB"/>
                     <connections>
                         <outlet property="tableview01_content" destination="1XE-N9-far" id="rYQ-71-6tz"/>
+                        <outlet property="view00_admob" destination="OvY-jQ-ZtZ" id="UD8-8u-Cfq"/>
                         <outlet property="view01_01_empty" destination="yYU-s5-rzz" id="juN-jG-PVp"/>
                         <outlet property="view01_02_list" destination="ptZ-iM-fDH" id="wix-nK-hX6"/>
                     </connections>

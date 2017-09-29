@@ -62,7 +62,28 @@
                 } else
                 {
                     NSLog(@"테스트 05 : ILMessageFilterActionNone");
-                    NSLog(@"Error deferring query request to network: %@", error);
+                    if(error.code == ILMessageFilterErrorSystem)
+                    {
+                        NSLog(@"네트워크 에러 01 : ILMessageFilterErrorSystem");
+                    }
+                    else if(error.code == ILMessageFilterErrorInvalidNetworkURL)
+                    {
+                        NSLog(@"네트워크 에러 02 : ILMessageFilterErrorInvalidNetworkURL");
+                    }
+                    else if(error.code == ILMessageFilterErrorNetworkURLUnauthorized)
+                    {
+                        NSLog(@"네트워크 에러 03 : ILMessageFilterErrorNetworkURLUnauthorized");
+                    }
+                    else if(error.code == ILMessageFilterErrorNetworkRequestFailed)
+                    {
+                        NSLog(@"네트워크 에러 04 : ILMessageFilterErrorNetworkRequestFailed");
+                    }
+                    else if(error.code == ILMessageFilterErrorRedundantNetworkDeferral)
+                    {
+                        NSLog(@"네트워크 에러 05 : ILMessageFilterErrorRedundantNetworkDeferral");
+                    }
+                    
+                    NSLog(@"Error deferring query request to network: %@", [error localizedDescription]);
                 }
                 
                 completion(response);
@@ -100,10 +121,21 @@
 
 - (ILMessageFilterAction)actionForNetworkResponse:(ILNetworkResponse *)networkResponse
 {
-    NSLog(@"테스트 07 : actionForNetworkResponse");
+    NSLog(@"테스트 07 : actionForNetworkResponse  --> networkResponse : %@",networkResponse);
     // Replace with logic to parse the HTTP response and data payload of `networkResponse` to return an action.
+    
+    
+    
     return ILMessageFilterActionNone;
 }
+
+
+
+
+
+
+
+
 
 -(BOOL)isContainStringWithLongText:(NSString*)longText compareWord:(NSString*)compareWord
 {

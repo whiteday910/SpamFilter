@@ -17,6 +17,18 @@
     // Do any additional setup after loading the view.
     [self addTopRightBtnForAddItem];
     [self refreshTableData];
+    
+    [[HWILib sharedObject] hwi_func01_delayAndRun:^{
+        GADNativeExpressAdView *adview = [[GADNativeExpressAdView alloc] initWithAdSize:GADAdSizeFromCGSize(self.view00_admob.frame.size)];
+        [adview setAdUnitID:@"ca-app-pub-8810698137233879/3046742776"];
+        [adview setRootViewController:self];
+        [adview setDelegate:self];
+        GADRequest *request = [GADRequest request];
+        [adview loadRequest:request];
+        [self.view00_admob addSubview:adview];
+        
+    } afterDelay:0.1];
+    
 }
 
 
@@ -197,34 +209,6 @@
 
 
 #pragma mark - 테이블뷰 델리깃
-
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    /*
-    UIView *testView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 44)];
-    [testView setBackgroundColor:getColorWithHex(0xff00ff)];
-    return testView;
-    */
-    
-    GADNativeExpressAdView *adview = [[GADNativeExpressAdView alloc] initWithAdSize:GADAdSizeFromCGSize(CGSizeMake([[UIScreen mainScreen] bounds].size.width, 80))];
-    
-    [adview setAdUnitID:@"ca-app-pub-8810698137233879/3046742776"];
-    [adview setRootViewController:self];
-    [adview setDelegate:self];
-    GADRequest *request = [GADRequest request];
-    [adview loadRequest:request];
-    
-    
-    return adview;
-    
-}
-
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 80.0 ;
-}
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if(self.arr01_list)

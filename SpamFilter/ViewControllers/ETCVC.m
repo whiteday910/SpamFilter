@@ -33,15 +33,17 @@
     
     
     /// 광고화면 로드
-    GADNativeExpressAdView *adview = [[GADNativeExpressAdView alloc] initWithAdSize:GADAdSizeFromCGSize(CGSizeMake([[UIScreen mainScreen] bounds].size.width, 80))];
+    [[HWILib sharedObject] hwi_func01_delayAndRun:^{
+        GADNativeExpressAdView *adview = [[GADNativeExpressAdView alloc] initWithAdSize:GADAdSizeFromCGSize(self.view01_ad.frame.size)];
+        [adview setAdUnitID:@"ca-app-pub-8810698137233879/3046742776"];
+        [adview setRootViewController:self];
+        [adview setDelegate:self];
+        GADRequest *request = [GADRequest request];
+        [adview loadRequest:request];
+        
+        [self.view01_ad addSubview:adview];
+    } afterDelay:0.1];
     
-    [adview setAdUnitID:@"ca-app-pub-8810698137233879/3046742776"];
-    [adview setRootViewController:self];
-    [adview setDelegate:self];
-    GADRequest *request = [GADRequest request];
-    [adview loadRequest:request];
-    
-    [self.view01_ad addSubview:adview];
     
 }
 

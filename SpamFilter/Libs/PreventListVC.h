@@ -20,7 +20,9 @@ typedef NS_ENUM(NSInteger, KeywordVCContentMode) {
     KeywordVCContentModeList
 };
 
+
 @property VCMode curVCMode;
+@property (weak, nonatomic) IBOutlet UIView *view00_admob;
 @property (weak, nonatomic) IBOutlet UIView *view01_01_empty;
 @property (weak, nonatomic) IBOutlet UIView *view01_02_list;
 @property (weak, nonatomic) IBOutlet UITableView *tableview01_content;
