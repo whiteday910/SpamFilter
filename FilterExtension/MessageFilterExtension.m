@@ -99,7 +99,7 @@
     NSLog(@"테스트 06 : offlineActionForQueryRequest");
     // Replace with logic to perform offline check whether to filter first (if possible).
     
-    NSLog(@"테스트 06 - 01 ->  queryRequest.sender :  %@",queryRequest.sender);
+    NSLog(@"테스트 06 - 01 ->  queryRequest.sender : %@",queryRequest.sender);
     NSLog(@"테스트 06 - 02 ->  queryRequest.messageBody :  %@",queryRequest.messageBody);
     
     /// 국내 법안으로 필터링
