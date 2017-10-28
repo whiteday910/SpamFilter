@@ -9,7 +9,8 @@
 #import "BaseVC.h"
 
 @interface PreventListVC : BaseVC< UITableViewDataSource, UITableViewDelegate, GADNativeExpressAdViewDelegate>
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *const01_admob_view_height_80;
+
+
 
 typedef NS_ENUM(NSInteger, VCMode) {
     VCModeKeyword,

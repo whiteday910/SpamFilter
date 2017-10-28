@@ -15,7 +15,7 @@
 {
     [super viewDidLoad];
     
-    
+    self.AD_REMOVE_PRODUCT_ID = @"spamBlock01";
     
     self.arr01_menu = [[NSMutableArray alloc] init];
     
@@ -115,10 +115,24 @@
     }
     else if([@"광고제거 및 후원($0.99) 구매" isEqualToString:selectedTitle])
     {
-        SKProductsRequest *skProductsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:self.AD_REMOVE_PRODUCT_ID]];
+        if([SKPaymentQueue canMakePayments])
+        {
+            NSLog(@"인앱결제가 가능합니다.");
+            [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+            
+            SKProductsRequest *skProductsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:self.AD_REMOVE_PRODUCT_ID]];
+            
+            [skProductsRequest setDelegate:self];
+            [skProductsRequest start];
+        }
+        else
+        {
+            NSLog(@"인앱결제가 불가합니다!!");
+            
+            [[HWILib sharedObject] hwi_func04_showSimpleAlert:@"이 기기는 현재 인앱결제가 불가합니다." message:nil btnTitle:@"확인" btnHandler:nil vc:self];
+            
+        }
         
-        [skProductsRequest setDelegate:self];
-        [skProductsRequest start];
         
     }
     else if([@"광고제거 및 후원 구매복원" isEqualToString:selectedTitle])
@@ -128,6 +142,13 @@
         {
             NSLog(@"터치 확인 -> 광고제거 및 후원 구매복원 02");
             [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+        }
+        else
+        {
+            NSLog(@"인앱결제가 불가합니다!!");
+            
+            [[HWILib sharedObject] hwi_func04_showSimpleAlert:@"이 기기는 현재 인앱결제가 불가합니다." message:nil btnTitle:@"확인" btnHandler:nil vc:self];
+            
         }
         
     }
@@ -166,7 +187,7 @@
     [controller dismissViewControllerAnimated:YES completion:nil];
     [[HWILib sharedObject] hwi_func01_delayAndRun:^{
         [[HWILib sharedObject] hwi_func04_showSimpleAlert:title message:desc btnTitle:@"확인" btnHandler:nil vc:self];
-    } afterDelay:1];
+    } afterDelay:0.5];
     
     
 }
@@ -189,7 +210,80 @@ didFailToReceiveAdWithError:(GADRequestError *)error
 }
 
 
+#pragma mark - 인앱결제 관련 델리깃
+- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
+{
+    NSLog(@"인앱결제 아이템 정보 확인 00");
+    
+    if( [response.products count] > 0 )
+    {
+        SKProduct *product = [response.products objectAtIndex:0];
+        
+        NSLog(@"인앱결제 아이템 정보 확인 Title : %@", product.localizedTitle);
+        NSLog(@"인앱결제 아이템 정보 확인 Description : %@", product.localizedDescription);
+        NSLog(@"인앱결제 아이템 정보 확인 Price : %@", product.price);
+        
+        SKPayment *payment = [SKPayment paymentWithProduct:product];
+        [[SKPaymentQueue defaultQueue] addPayment:payment];
+        
+        
+        
+    }
+    
+    if( [response.invalidProductIdentifiers count] > 0 )
+    {
+        NSString *invalidString = [response.invalidProductIdentifiers objectAtIndex:0];
+        NSLog(@"인앱결제 아이템 정보 확인 Invalid Identifiers : %@", invalidString);
+    }
+    
+}
 
+- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray<SKPaymentTransaction *> *)transactions
+{
+    for (SKPaymentTransaction *transaction in transactions)
+    {
+        switch (transaction.transactionState)
+        {
+            case SKPaymentTransactionStatePurchasing:
+                NSLog(@"결제 확인 00 : SKPaymentTransactionStatePurchasing");
+                break;
+            case SKPaymentTransactionStatePurchased:
+                NSLog(@"결제 확인 01 : SKPaymentTransactionStatePurchased");
+                [[SpamFilterLib sharedSpamFilterLib] spamFilterLib03_setPurchaseStateYN:@"Y"];
+                [self checkPurchase];
+                break;
+            case SKPaymentTransactionStateFailed:
+                NSLog(@"결제 확인 02 : SKPaymentTransactionStateFailed");
+                break;
+            case SKPaymentTransactionStateRestored:
+                NSLog(@"결제 확인 03 : SKPaymentTransactionStateRestored");
+                break;
+            case SKPaymentTransactionStateDeferred:
+                NSLog(@"결제 확인 04 : SKPaymentTransactionStateDeferred");
+                break;
+            default:
+                break;
+        }
+        
+        
+    }
+}
+
+
+
+- (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
+{
+    
+    NSLog(@"로그 확인 001 --> restoreCompletedTransactionsFailedWithError");
+    NSLog(@"로그 확인 002 --> error : %@",[error localizedDescription]);
+}
+
+- (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+{
+    [[SpamFilterLib sharedSpamFilterLib] spamFilterLib03_setPurchaseStateYN:@"Y"];
+    [self checkPurchase];
+    NSLog(@"로그확인 003 -> paymentQueueRestoreCompletedTransactionsFinished");
+}
 
 
 

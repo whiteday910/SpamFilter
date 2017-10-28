@@ -28,8 +28,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPe-Ca-mUG">
                                 <rect key="frame" x="0.0" y="144" width="375" height="474"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 키워드가 존재하지 않습니다.  키워드를 등록하시면 해당 키워드가 포함된 문자메시지는 알림표시 및 진동, 벨소리가 울리지 않으며 'SMS 정크'로 분류됩니다.  '(광고)' 가 포함된 키워드는 자동으로 분류됩니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAu-4f-rlW">
-                                        <rect key="frame" x="20.5" y="120.5" width="334.5" height="134"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAu-4f-rlW">
+                                        <rect key="frame" x="20.5" y="92" width="334.5" height="191"/>
+                                        <string key="text">등록된 키워드가 존재하지 않습니다.  키워드를 등록하시면 해당 키워드가 포함된 문자메시지는 알림표시 및 진동, 벨소리가 울리지 않으며 'SMS 정크'로 분류됩니다.  '(광고)' 가 포함된 키워드는 자동으로 분류됩니다.  만약 알림을 받고싶은 광고문자를 주는 곳이 있다면 해당번호를 연락처에 저장해주세요</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
