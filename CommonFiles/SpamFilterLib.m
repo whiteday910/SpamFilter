@@ -75,6 +75,15 @@ static NSUserDefaults *sharedDefaultsObj;
 }
 
 
-
-
+-(void)spamFilterLib03_setPurchaseStateYN:(NSString*)stringYN
+{
+    [[[SpamFilterLib sharedSpamFilterLib] userDefaults] setObject:stringYN forKey:@"spamFilterLib03_setPurchaseStateYN"];
+    [[[SpamFilterLib sharedSpamFilterLib] userDefaults] synchronize];
+}
+-(NSString*)spamFilterLib03_getPurchaseStateYN
+{
+    NSString *purchaseStateYN = [[[SpamFilterLib sharedSpamFilterLib] userDefaults] objectForKey:@"spamFilterLib03_setPurchaseStateYN"];
+    
+    return purchaseStateYN;
+}
 @end

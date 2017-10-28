@@ -8,9 +8,6 @@
 
 #import "PreventListVC.h"
 
-
-
 @interface KeywordVC : PreventListVC
-
 
 @end

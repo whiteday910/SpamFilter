@@ -22,4 +22,7 @@
 -(NSUserDefaults*)userDefaults;
 -(NSMutableDictionary*)spamFilterLib01_getAppDataFromFile;
 -(void)spamFilterLib02_setAppDataToFileWithDic:(NSDictionary*)appDataDic;
+-(void)spamFilterLib03_setPurchaseStateYN:(NSString*)stringYN;
+-(NSString*)spamFilterLib03_getPurchaseStateYN;
+
 @end

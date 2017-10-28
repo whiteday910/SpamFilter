@@ -7,8 +7,14 @@
 //
 @import GoogleMobileAds;
 #import "SpamFilterLib.h"
+#import <StoreKit/StoreKit.h>
 
-@interface BaseVC : UIViewController
+@interface BaseVC : UIViewController< SKPaymentTransactionObserver, SKProductsRequestDelegate>
+@property NSString *AD_REMOVE_PRODUCT_ID;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *const01_admob_view_height_80;
+
+
 -(void)addTopRightBtnForAddItem;
 -(void)onAddButtonTouchUpInside:(id)sender;
+-(void)checkPurchase;
 @end

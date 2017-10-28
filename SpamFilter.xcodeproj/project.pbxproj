@@ -23,6 +23,7 @@
 		E5341D2A1F73297B0028DD7F /* RequiredSettingGuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D291F73297B0028DD7F /* RequiredSettingGuideVC.m */; };
 		E5341D2E1F732F9C0028DD7F /* RequiredSettingGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5341D2D1F732F9C0028DD7F /* RequiredSettingGuideCell.m */; };
 		E5341D311F733B260028DD7F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5341D301F733B260028DD7F /* MessageUI.framework */; };
+		E56C81A71FA4A2CF008358AA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E56C81A61FA4A2CF008358AA /* StoreKit.framework */; };
 		E58D93911F716C700039E518 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E58D93901F716C700039E518 /* AppDelegate.m */; };
 		E58D93971F716C700039E518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E58D93951F716C700039E518 /* Main.storyboard */; };
 		E58D93991F716C700039E518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E58D93981F716C700039E518 /* Assets.xcassets */; };
@@ -86,6 +87,7 @@
 		E5341D2C1F732F9C0028DD7F /* RequiredSettingGuideCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequiredSettingGuideCell.h; sourceTree = "<group>"; };
 		E5341D2D1F732F9C0028DD7F /* RequiredSettingGuideCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequiredSettingGuideCell.m; sourceTree = "<group>"; };
 		E5341D301F733B260028DD7F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E56C81A61FA4A2CF008358AA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E58D938C1F716C700039E518 /* SpamFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpamFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58D938F1F716C700039E518 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E58D93901F716C700039E518 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E56C81A71FA4A2CF008358AA /* StoreKit.framework in Frameworks */,
 				E5341D311F733B260028DD7F /* MessageUI.framework in Frameworks */,
 				D5E4F5B26FD7CAAD068CAA37 /* libPods-SpamFilter.a in Frameworks */,
 			);
@@ -187,6 +190,7 @@
 		E5341D2F1F733B260028DD7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E56C81A61FA4A2CF008358AA /* StoreKit.framework */,
 				E5341D301F733B260028DD7F /* MessageUI.framework */,
 				3C33DC09388194C3D95FA4DB /* libPods-FilterExtension.a */,
 				7DADE9E87D9B4378F31F6042 /* libPods-SpamFilter.a */,
@@ -302,6 +306,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.SafariKeychain = {

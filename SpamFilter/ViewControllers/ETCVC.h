@@ -8,10 +8,14 @@
 
 #import "BaseVC.h"
 
+
 @interface ETCVC : BaseVC <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate, GADNativeExpressAdViewDelegate>
 @property NSMutableArray *arr01_menu;
 @property (weak, nonatomic) IBOutlet UITableView *tableview01_content;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *const01_tableviewHeight;
 @property (weak, nonatomic) IBOutlet UIView *view01_ad;
+
+
+
 
 @end

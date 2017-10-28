@@ -4,7 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -102,6 +102,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="키워드 필터링" id="srr-94-ohd"/>
                     <connections>
+                        <outlet property="const01_admob_view_height_80" destination="OS9-L6-SR3" id="gbl-Ip-49a"/>
                         <outlet property="tableview01_content" destination="jzn-GU-PAs" id="UUP-t7-5Mf"/>
                         <outlet property="view00_admob" destination="Em9-Qk-idd" id="kg2-f6-xBx"/>
                         <outlet property="view01_01_empty" destination="SPe-Ca-mUG" id="HPu-ZN-lzV"/>
@@ -130,8 +131,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYU-s5-rzz">
                                 <rect key="frame" x="0.0" y="144" width="375" height="474"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 전화번호가 존재하지 않습니다.  전화번호를 등록하시면 해당 전화번호로 시작되는 번호로 문자의 알림표시 및 진동, 벨소리가 울리지 않으며 'SMS 정크'로 분류됩니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTp-bN-PNB">
-                                        <rect key="frame" x="25" y="139.5" width="325.5" height="95.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTp-bN-PNB">
+                                        <rect key="frame" x="20.5" y="82" width="334.5" height="210.5"/>
+                                        <string key="text">등록된 전화번호가 존재하지 않습니다.  전화번호를 등록하시면 해당 전화번호로 시작되는 번호로 문자의 알림표시 및 진동, 벨소리가 울리지 않으며 'SMS 정크'로 분류됩니다.  070으로 시작되는 번호는 자동으로 알림을 차단합니다.
+만약 070으로 시작되는 번호 중 알림을 차단하지 않고 싶을 경우에는 해당 전화번호를 연락처에 저장해주세요</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -204,6 +207,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="전화번호 필터링" id="f00-rB-xqB"/>
                     <connections>
+                        <outlet property="const01_admob_view_height_80" destination="hEa-Q4-JqI" id="Mzs-uO-Kd3"/>
                         <outlet property="tableview01_content" destination="1XE-N9-far" id="rYQ-71-6tz"/>
                         <outlet property="view00_admob" destination="OvY-jQ-ZtZ" id="UD8-8u-Cfq"/>
                         <outlet property="view01_01_empty" destination="yYU-s5-rzz" id="juN-jG-PVp"/>
@@ -274,6 +278,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="기타" id="TpR-82-f5V"/>
                     <connections>
+                        <outlet property="const01_admob_view_height_80" destination="zqb-It-qvz" id="AgN-ix-8Wp"/>
                         <outlet property="const01_tableviewHeight" destination="QCh-fV-XjV" id="jyy-xn-yfU"/>
                         <outlet property="tableview01_content" destination="0li-Gz-xOD" id="1am-pb-ZIn"/>
                         <outlet property="view01_ad" destination="W0R-cf-9go" id="7WR-n1-c6l"/>
@@ -312,7 +317,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wwL-od-189">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
+                                                            <rect key="frame" x="16" y="20" width="343" height="464"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>

@@ -102,8 +102,10 @@
     NSLog(@"테스트 06 - 01 ->  queryRequest.sender : %@",queryRequest.sender);
     NSLog(@"테스트 06 - 02 ->  queryRequest.messageBody :  %@",queryRequest.messageBody);
     
-    /// 국내 법안으로 필터링
-    if( [self isContainStringWithLongText:queryRequest.messageBody compareWord:@"(광고)"] )
+    /// 국내 법안 및 070 전화번호로 필터링
+    if( [self isContainStringWithLongText:queryRequest.messageBody compareWord:@"(광고)"]
+       ||  [queryRequest.sender hasPrefix:@"070"])
+       
     {
         return ILMessageFilterActionFilter;
     }

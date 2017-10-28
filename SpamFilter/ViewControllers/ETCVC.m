@@ -15,11 +15,15 @@
 {
     [super viewDidLoad];
     
+    
+    
     self.arr01_menu = [[NSMutableArray alloc] init];
     
     
     [self.arr01_menu addObject:@"SPAM BLOCK 설정가이드"];
     [self.arr01_menu addObject:@"기능개선 요청"];
+    [self.arr01_menu addObject:@"광고제거 및 후원($0.99) 구매"];
+    [self.arr01_menu addObject:@"광고제거 및 후원 구매복원"];
     
     
     
@@ -109,8 +113,24 @@
             } vc:self];
         }
     }
-    
-    
+    else if([@"광고제거 및 후원($0.99) 구매" isEqualToString:selectedTitle])
+    {
+        SKProductsRequest *skProductsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:[NSSet setWithObject:self.AD_REMOVE_PRODUCT_ID]];
+        
+        [skProductsRequest setDelegate:self];
+        [skProductsRequest start];
+        
+    }
+    else if([@"광고제거 및 후원 구매복원" isEqualToString:selectedTitle])
+    {
+        NSLog(@"터치 확인 -> 광고제거 및 후원 구매복원 01");
+        if([SKPaymentQueue canMakePayments])
+        {
+            NSLog(@"터치 확인 -> 광고제거 및 후원 구매복원 02");
+            [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+        }
+        
+    }
     
     
 }
@@ -167,6 +187,12 @@ didFailToReceiveAdWithError:(GADRequestError *)error
     NSLog(@"ETCVC 애드몹 테스트 02 : didFailToReceiveAdWithError --> error : %@",[error localizedDescription]);
     
 }
+
+
+
+
+
+
 
 @end
 
