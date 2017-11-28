@@ -280,8 +280,36 @@ didFailToReceiveAdWithError:(GADRequestError *)error
 
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
 {
-    [[SpamFilterLib sharedSpamFilterLib] spamFilterLib03_setPurchaseStateYN:@"Y"];
-    [self checkPurchase];
+    
+    
+    
+    NSArray<SKPaymentTransaction *> *transactions = [queue transactions];
+    
+    BOOL isRestored = NO;
+    for(int i=0; i < [transactions count]; i++)
+    {
+        SKPaymentTransaction *transaction = transactions[i];
+        NSString *productIdentifier = [[transaction payment] productIdentifier];
+        NSLog(@"구매했던 프로덕트 아이덴티파이어 확인 i : %d ,  productIdentifier : %@",i, productIdentifier);
+        
+        if([productIdentifier isEqualToString:self.AD_REMOVE_PRODUCT_ID])
+        {
+            [[SpamFilterLib sharedSpamFilterLib] spamFilterLib03_setPurchaseStateYN:@"Y"];
+            [self checkPurchase];
+            break;
+        }
+        
+    }
+    
+    if(!isRestored)
+    {
+        [[HWILib sharedObject] hwi_func04_showSimpleAlert:@"구매확인" message:@"광고제거 및 후원을 구매하신 적이 없습니다." btnTitle:@"OK" btnHandler:nil vc:self];
+    }
+    
+    
+    
+    
+    
     NSLog(@"로그확인 003 -> paymentQueueRestoreCompletedTransactionsFinished");
 }
 

@@ -105,19 +105,34 @@
     /// 국내 법안 및 070 전화번호로 필터링
     if( [self isContainStringWithLongText:queryRequest.messageBody compareWord:@"(광고)"]
        ||  [queryRequest.sender hasPrefix:@"070"])
-       
     {
+        NSLog(@"테스트 06 - 03");
         return ILMessageFilterActionFilter;
     }
     
-    
+    NSLog(@"테스트 06 - 04");
     /// 등록한 키워드, 전화번호로 필터링
     if( [self isContainsSpamSetting:queryRequest] )
     {
+        NSLog(@"테스트 06 - 05");
         return ILMessageFilterActionFilter;
     }
     
     
+    /// 이미지만 달랑 온 경우 필터링
+    NSString *checkString = [queryRequest.messageBody stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    
+    NSLog(@"checkString : [%@], length : %ld",checkString,[checkString length]);
+    
+    /// 정말 알수없는 특수문자로 필터링 됨 --> @"" 이거 안에 이상한 값 하나 있음
+    if([@"￼" isEqualToString:checkString])
+    {
+        NSLog(@"테스트 06 - 06");
+        return ILMessageFilterActionFilter;
+    }
+    
+    NSLog(@"테스트 06 - 07");
     return ILMessageFilterActionNone;
 }
 
